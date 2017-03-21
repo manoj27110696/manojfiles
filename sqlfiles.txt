@@ -1,0 +1,332 @@
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[stageCountry](
+	[Name] [nvarchar](50) NULL,
+	[ModifiedDate] [datetime] NULL,
+	[CountryRegionCode] [nvarchar](3) NULL
+) ON [PRIMARY]
+
+GO
+USE [AdventureWorksDW_stage_demo]
+GO
+
+
+CREATE TABLE [dbo].[stageResellerSalesNoMatch](
+	[TerritoryID] [int] NULL,
+	[OrderDate] [date] NULL,
+	[DueDate] [date] NULL,
+	[ShipDate] [date] NULL,
+	[SalesOrderNumber] [nvarchar](25) NULL,
+	[PurchaseOrderNumber] [nvarchar](25) NULL,
+	[AccountNumber] [nvarchar](15) NULL,
+	[CustomerID] [int] NULL,
+	[SalesPersonID] [int] NULL,
+	[SubTotal] [money] NULL,
+	[TaxAmt] [money] NULL,
+	[Freight] [money] NULL,
+	[TotalDue] [money] NULL,
+	[RevisionNumber] [tinyint] NULL,
+	[SalesOrderDetailID] [int] NULL,
+	[CarrierTrackingNumber] [nvarchar](25) NULL,
+	[OrderQty] [smallint] NULL,
+	[ProductID] [nvarchar](25) NULL,
+	[UnitPrice] [money] NULL,
+	[UnitPriceDiscount] [money] NULL,
+	[SalesOrderID] [int] NULL,
+	[StoreID] [int] NULL,
+	[AuditKey] [int] NULL,
+	[StoreIDstr] [nvarchar](15) NULL,
+	[ProductKey] [int] NULL,
+	[StandardCost] [money] NULL,
+	[SalesTerritoryKey] [int] NULL,
+	[OrderDateKey] [int] NULL,
+	[DueDateKey] [int] NULL,
+	[ShipDateKey] [int] NULL,
+	[EmployeeKey] [int] NULL,
+	[ResellerKey] [int] NULL
+) ON [PRIMARY]
+
+GO
+
+
+
+CREATE TABLE [dbo].[stageSalesTerritoryError](
+	[TerritoryID] [int] NULL,
+	[Name] [nvarchar](1000) NULL,
+	[CountryRegionCode] [nvarchar](1000) NULL,
+	[Group] [nvarchar](1000) NULL,
+	[SalesYTD] [int] NULL,
+	[SalesLastYear] [int] NULL,
+	[CostYTD] [int] NULL,
+	[CostLastYear] [int] NULL,
+	[rowguid] [uniqueidentifier] NULL,
+	[ModifiedDate] [int] NULL,
+	[ErrorCode] [int] NULL,
+	[ErrorColumn] [int] NULL
+) ON [PRIMARY]
+
+GO 
+CREATE TABLE [stageReseller_FuzzyGrouping] (
+    [_key_in] int,
+    [_key_out] int,
+    [_score] real,
+    [AnnualSales] money,
+    [AnnualRevenue] money,
+    [BankName] nvarchar(50),
+    [BusinessType] nvarchar(5),
+    [YearOpened] int,
+    [NumberEmployees] int,
+    [FirstOrderYear] int,
+    [LastOrderYear] int,
+    [ResellerKey] int,
+    [ResellerAlternateKey] nvarchar(15),
+    [ResellerName] nvarchar(50),
+    [ProductLine] nvarchar(50),
+    [AddressLine1] nvarchar(60),
+    [AddressLine2] nvarchar(60),
+    [City] nvarchar(30),
+    [StateProvinceCode] nvarchar(3),
+    [PostalCode] nvarchar(15),
+    [Current] bit,
+    [Inferred] bit,
+    [ResellerName_clean] nvarchar(50),
+    [AddressLine1_clean] nvarchar(60),
+    [City_clean] nvarchar(30),
+    [StateProvinceCode_clean] nvarchar(3),
+    [PostalCode_clean] nvarchar(15),
+    [_Similarity_ResellerName] real,
+    [_Similarity_AddressLine1] real,
+    [_Similarity_City] real,
+    [_Similarity_StateProvinceCode] real,
+    [_Similarity_PostalCode] real
+)
+CREATE TABLE [dbo].[stageReseller_Fuzzy](
+	[AnnualSales] [money] NULL,
+	[AnnualRevenue] [money] NULL,
+	[BankName] [nvarchar](50) NULL,
+	[BusinessType] [nvarchar](5) NULL,
+	[YearOpened] [int] NULL,
+	[NumberEmployees] [int] NULL,
+	[FirstOrderYear] [int] NULL,
+	[LastOrderYear] [int] NULL,
+	[ResellerAlternateKey] [nvarchar](15) NULL,
+	[ResellerName] [nvarchar](50) NULL,
+	[ProductLine] [nvarchar](50) NULL,
+	[AddressLine1] [nvarchar](60) NULL,
+	[AddressLine2] [nvarchar](60) NULL,
+	[City] [nvarchar](30) NULL,
+	[StateProvinceCode] [nvarchar](3) NULL,
+	[PostalCode] [nvarchar](15) NULL,
+	[Current] [bit] NULL,
+	[Inferred] [bit] NULL,
+	[ResellerKey] [int] NULL,
+	[ResellerKeyFinal] [int] NULL,
+	[_Similarity] [real] NULL,
+	[_Confidence] [real] NULL,
+	[_Similarity_ResellerName] [real] NULL,
+	[_Similarity_AddressLine1] [real] NULL,
+	[_Similarity_AddressLine2] [real] NULL,
+	[_Similarity_City] [real] NULL,
+	[_Similarity_StateProvinceCode] [real] NULL,
+	[_Similarity_PostalCode] [real] NULL
+) ON [PRIMARY]
+
+GO
+
+
+CREATE TABLE [dbo].[stageReseller_Invalid](
+	[Name] [nvarchar](50) NULL,
+	[BusinessEntityID] [int] NULL,
+	[AnnualSales] [money] NULL,
+	[AnnualRevenue] [money] NULL,
+	[BankName] [nvarchar](50) NULL,
+	[BusinessType] [nvarchar](5) NULL,
+	[YearOpened] [int] NULL,
+	[Specialty] [nvarchar](50) NULL,
+	[SquareFeet] [int] NULL,
+	[Brands] [nvarchar](30) NULL,
+	[Internet] [nvarchar](30) NULL,
+	[NumberEmployees] [int] NULL,
+	[AddressLine1] [nvarchar](60) NULL,
+	[AddressLine2] [nvarchar](60) NULL,
+	[City] [nvarchar](30) NULL,
+	[StateProvinceCode] [nvarchar](3) NULL,
+	[PostalCode] [nvarchar](15) NULL,
+	[FirstOrderYear] [int] NULL,
+	[LastOrderYear] [int] NULL,
+	[AuditKey] [int] NULL,
+	[ResellerID] [nvarchar](15) NULL,
+	[BusinessTypestr] [varchar](20) NULL,
+	[ErrorMsg] [nvarchar](22) NULL
+) ON [PRIMARY]
+
+GO
+
+
+
+
+
+CREATE TABLE [stageAddress] (
+    [BusinessEntityID] int,
+    [AddressID] int,
+    [AddressLine1] nvarchar(60),
+    [AddressLine2] nvarchar(60),
+    [City] nvarchar(30),
+    [StateProvinceCode] nvarchar(3),
+    [PostalCode] nvarchar(15)
+)
+CREATE TABLE [dbo].[stageProduct](
+	[ProductID] [int] NULL,
+	[Name] [nvarchar](50) NULL,
+	[ProductNumber] [nvarchar](25) NULL,
+	[MakeFlag] [bit] NULL,
+	[FinishedGoodsFlag] [bit] NULL,
+	[Color] [nvarchar](15) NULL,
+	[SafetyStockLevel] [smallint] NULL,
+	[ReorderPoint] [smallint] NULL,
+	[StandardCost] [money] NULL,
+	[ListPrice] [money] NULL,
+	[Size] [nvarchar](5) NULL,
+	[SizeUnitMeasureCode] [nvarchar](3) NULL,
+	[WeightUnitMeasureCode] [nvarchar](3) NULL,
+	[Weight] [numeric](8, 2) NULL,
+	[DaysToManufacture] [int] NULL,
+	[ProductLine] [nvarchar](2) NULL,
+	[Class] [nvarchar](2) NULL,
+	[Style] [nvarchar](2) NULL,
+	[ProductSubcategoryID] [int] NULL,
+	[ProductModelID] [int] NULL,
+	[SellStartDate] [datetime] NULL,
+	[SellEndDate] [datetime] NULL,
+	[DiscontinuedDate] [datetime] NULL,
+	[rowguid] [uniqueidentifier] NULL,
+	[ModifiedDate] [datetime] NULL
+) ON [PRIMARY]
+
+GO
+
+CREATE TABLE [stageReseller] (
+    [BusinessEntityID] int,
+    [Name] nvarchar(50),
+    [AnnualSales] money,
+    [AnnualRevenue] money,
+    [BankName] nvarchar(50),
+    [BusinessType] nvarchar(5),
+    [YearOpened] int,
+    [Specialty] nvarchar(50),
+    [SquareFeet] int,
+    [Brands] nvarchar(30),
+    [Internet] nvarchar(30),
+    [NumberEmployees] int,
+    [FirstOrderYear] int,
+    [LastOrderYear] int,
+    [StoreID] int
+)
+CREATE TABLE [dbo].[stageProductCategory](
+	[Name] [nvarchar](50) NULL,
+	[rowguid] [uniqueidentifier] NULL,
+	[ModifiedDate] [datetime] NULL,
+	[ProductCategoryID] [int] NULL
+) ON [PRIMARY]
+
+GO
+CREATE TABLE [dbo].[stageProductSubcategory](
+	[Name] [nvarchar](50) NULL,
+	[ProductSubcategoryID] [int] NULL,
+	[rowguid] [uniqueidentifier] NULL,
+	[ModifiedDate] [datetime] NULL,
+	[ProductCategoryID] [int] NULL
+) ON [PRIMARY]
+
+GO
+CREATE TABLE [dbo].[stageSalesDetail](
+	[rowguid] [uniqueidentifier] NULL,
+	[ModifiedDate] [datetime] NULL,
+	[SalesOrderID] [int] NULL,
+	[SalesOrderDetailID] [int] NULL,
+	[CarrierTrackingNumber] [nvarchar](25) NULL,
+	[OrderQty] [smallint] NULL,
+	[ProductID] [int] NULL,
+	[SpecialOfferID] [int] NULL,
+	[UnitPrice] [money] NULL,
+	[UnitPriceDiscount] [money] NULL,
+	[LineTotal] [numeric](38, 6) NULL
+) ON [PRIMARY]
+
+GO
+
+CREATE TABLE [dbo].[stageSalesHeader](
+	[rowguid] [uniqueidentifier] NULL,
+	[ModifiedDate] [datetime] NULL,
+	[TerritoryID] [int] NULL,
+	[SalesOrderID] [int] NULL,
+	[RevisionNumber] [tinyint] NULL,
+	[OrderDate] [datetime] NULL,
+	[DueDate] [datetime] NULL,
+	[ShipDate] [datetime] NULL,
+	[Status] [tinyint] NULL,
+	[OnlineOrderFlag] [bit] NULL,
+	[SalesOrderNumber] [nvarchar](25) NULL,
+	[PurchaseOrderNumber] [nvarchar](25) NULL,
+	[AccountNumber] [nvarchar](15) NULL,
+	[CustomerID] [int] NULL,
+	[SalesPersonID] [int] NULL,
+	[BillToAddressID] [int] NULL,
+	[ShipToAddressID] [int] NULL,
+	[ShipMethodID] [int] NULL,
+	[CreditCardID] [int] NULL,
+	[CreditCardApprovalCode] [varchar](15) NULL,
+	[CurrencyRateID] [int] NULL,
+	[SubTotal] [money] NULL,
+	[TaxAmt] [money] NULL,
+	[Freight] [money] NULL,
+	[TotalDue] [money] NULL,
+	[Comment] [nvarchar](128) NULL,
+	[StoreID] int NULL
+) ON [PRIMARY]
+
+GO
+CREATE TABLE [dbo].[stageSalesTerritory](
+	[Name] [nvarchar](50) NULL,
+	[rowguid] [uniqueidentifier] NULL,
+	[ModifiedDate] [datetime] NULL,
+	[TerritoryID] [int] NULL,
+	[CountryRegionCode] [nvarchar](3) NULL,
+	[Group] [nvarchar](50) NULL,
+	[SalesYTD] [money] NULL,
+	[SalesLastYear] [money] NULL,
+	[CostYTD] [money] NULL,
+	[CostLastYear] [money] NULL
+) ON [PRIMARY]
+
+GO
+
+CREATE TABLE [stageEmployee] (
+    [BusinessEntityID] int,
+    [NationalIDNumber] nvarchar(15),
+    [ManagerNationalIDNumber] nvarchar(15),
+    [FirstName] nvarchar(50),
+    [MiddleName] nvarchar(50),
+    [LastName] nvarchar(50),
+    [JobTitle] nvarchar(50),
+    [PhoneNumber] nvarchar(25),
+    [EmailAddress] nvarchar(50),
+    [City] nvarchar(30),
+    [StateProvinceName] nvarchar(50),
+    [CountryRegionName] nvarchar(50),
+    [TerritoryName] nvarchar(50),
+    [TerritoryGroup] nvarchar(50),
+    [BirthDate] date,
+    [MaritalStatus] nvarchar(1),
+    [Gender] nvarchar(1),
+    [HireDate] date,
+    [SalariedFlag] bit,
+    [VacationHours] smallint,
+    [SickLeaveHours] smallint,
+    [CurrentFlag] bit,
+    [DepartmentName] nvarchar(50),
+    [PayFrequency] tinyint,
+    [Rate] money
+)
