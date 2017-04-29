@@ -1,0 +1,12 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="Owner-PC.SindhutestTarget 1"
+  DTS:DTSID="{35AEC9E5-C286-4579-BEE0-06051B3D9271}"
+  DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <DTS:PropertyExpression
+    DTS:Name="ConnectionString">@[$Project::OwnerPCSindhutestTarget1_ParentPackage]</DTS:PropertyExpression>
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=Owner-PC;Initial Catalog=SindhutestTarget;Integrated Security=True;Application Name=SSIS-CDC_INIT_LOAD-{35AEC9E5-C286-4579-BEE0-06051B3D9271}Owner-PC.SindhutestTarget 1;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

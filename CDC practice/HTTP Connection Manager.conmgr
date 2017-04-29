@@ -1,0 +1,20 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="HTTP Connection Manager"
+  DTS:DTSID="{03989BA7-CBB0-4FA7-BF03-7EADEDD74B33}"
+  DTS:CreationName="HTTP">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="http://www.webservicex.net/uszip.asmx?WSDL">
+      <DTS:HttpConnection
+        DTS:ServerURL="http://www.webservicex.net/uszip.asmx?WSDL">
+        <DTS:Property
+          DTS:Name="ServerPassword"
+          Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA6+UphYJHwE2VvuuMkAs1hwAAAAACAAAAAAAQZgAAAAEAACAAAAAv8yS1+xWlxNsRLJN5OdWCbwFzdsco8Jyqfbzu3+jsqgAAAAAOgAAAAAIAACAAAADrscFlYpXMEwqVTZOaumupbGw3QT9IePWWLIAFdxBe+4AAAACSbrHBP5Al7tPTnf2aYuCCvbQmxWAenxZgdmjlSXdEzGDCHKAR8jWLq8tp+mHCvQ1dsOEvsA1QynO1uBBMguOm5NS5qacJsT6YJgaazhEPUcde/KYrmdVwmR+bY4ZaWmvGmglABGs6gN9OSulu0B9QLzK6wiYBoaL7nybew054vkAAAACDPmiUCiXdirmF7wWMLy9JpE9gJ1bYFMHOALBwiaoT1VCj4u0Yp4es/6dqT69rcVgw7SfY4p/fGPSiW2YcgiJD</DTS:Property>
+        <DTS:Property
+          DTS:Name="ProxyPassword"
+          Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA6+UphYJHwE2VvuuMkAs1hwAAAAACAAAAAAAQZgAAAAEAACAAAAB49Qby22P5KmdWCzSVf5AfLR5m7Les7CC0y6x2UTvWsAAAAAAOgAAAAAIAACAAAAA04op59qR7MJd7vl4mgc/O1VtbvMtE9m/dA/SHfuvOWoAAAAD6JhYGBEV9jQpIFUEDG8Tev176/VRRhVNOE9gW+Ds3myemhSd0DOLMHPOc5IBXwIapJHTRH12tskcjTQ31jLX5Nb+Hpjxh1DbSDkZY+u8x9fxjvQ44euIorOGB+WgIqgLapZO+ncTI51IQln1RBUPsZCpa+ncWpXn6tkHEOsoWwkAAAABB9Ld1yf5py70RWRuhukxvgMPwuUVGqJk/HkLLI45nvGD7adAjTJEhC6eQLhj/C2LyG4BVh3IA1EoLRAoaDN6H</DTS:Property>
+      </DTS:HttpConnection>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

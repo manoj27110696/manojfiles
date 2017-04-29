@@ -1,0 +1,557 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/28/2017 8:19:39 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="OWNER-PC"
+  DTS:CreatorName="OWNER-PC\Owner"
+  DTS:DTSID="{634E7F61-E016-449A-9246-4ACE466AA208}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="13.0.4001.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="SSISwebservices2"
+  DTS:PackageType="5"
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{C0AEFFF0-2BA6-4A5F-A7DE-2BAA78A60F57}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[AllCities.xml]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{ECC9133A-971C-4FBA-ABC7-A428B1C68F18}"
+      DTS:ObjectName="AllCities.xml">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:FileUsageType="1"
+          DTS:ConnectionString="C:\Users\Owner\Desktop\SSIS Notes\weservices task\AllCities.xml" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[HTTP Connection Manager 1]"
+      DTS:CreationName="HTTP"
+      DTS:DTSID="{55512F5A-C696-4262-9CFD-B18D22AFC017}"
+      DTS:ObjectName="HTTP Connection Manager 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="http://www.webservicex.net/globalweather.asmx?WSDL">
+          <DTS:HttpConnection
+            DTS:ServerURL="http://www.webservicex.net/globalweather.asmx?WSDL">
+            <DTS:Property
+              DTS:Name="ServerPassword"
+              Sensitive="1"
+              Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA6+UphYJHwE2VvuuMkAs1hwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAA9YgR6XNAEsx6L8q3NsuR21CJ+cI+d/deyD0d/XmRI5gAAAAAOgAAAAAIAACAAAABDdKSpoRCoJkWaML7z5eNvczuAA4349e1a/yJQIcnrThAAAAAMaXB0y41ahRjedOh1nZjAQAAAAAta1zPPeCRcBdU8ZPus3PZShkVwtQiGjgngHIKdGy8qdUrPdtyKV4Oid/qGhdIkEWpmAVwPQqWkvpB+yvDujlE</DTS:Property>
+            <DTS:Property
+              DTS:Name="ProxyPassword"
+              Sensitive="1"
+              Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA6+UphYJHwE2VvuuMkAs1hwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABXy8yCX8eOQwxZBEYT71OVScSTssEIFU6Ji1QrHTA8OgAAAAAOgAAAAAIAACAAAACasGmal06Ti8J33S2riM5BdoMzu/HGFzU5unALBZ3wVRAAAAAcdgacCVFtQiktLuIBtrT1QAAAAEQ0Pqy3+THmCJx3SKe0q6QIVGiNNmfNVM5U+tBZ52vCRbFq+PWxSp+VFBA66s2WTEzHBmU3U9T7fnt4p5D7A38</DTS:Property>
+          </DTS:HttpConnection>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[OWNER-PC.sindhu test]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{B87644B4-8193-4004-9FEE-B0F7439633AA}"
+      DTS:ObjectName="OWNER-PC.sindhu test">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=OWNER-PC;Initial Catalog=sindhu test;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{767968D9-3735-404B-9703-9F2A92FAA559}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="CountryName">
+      <DTS:VariableValue
+        DTS:DataType="8">France</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{5062E709-CB7E-4DC5-9FF5-3A298FB6871F}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[AllCitiesWebService]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[OWNER-PC.sindhu test]"
+                  connectionManagerRefId="Package.ConnectionManagers[OWNER-PC.sindhu test]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Country]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Country"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
+                      lineageId="Package\Data Flow Task\XML Source.Outputs[Table].Columns[Country]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[City]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="City"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[City]"
+                      lineageId="Package\Data Flow Task\XML Source.Outputs[Table].Columns[City]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
+                      dataType="wstr"
+                      length="255"
+                      name="Country" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[City]"
+                      dataType="wstr"
+                      length="255"
+                      name="City" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\XML Source"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Extracts data from an XML file. For example, extract catalog data from an XML file that represents catalogs and catalog items. Before using, specify the schema and generate an output for each XML element.;Microsoft Corporation;Microsoft SQL Server; Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Extracts data from an XML file. For example, extract catalog data from an XML file that represents catalogs and catalog items. Before using, specify the schema and generate an output for each XML element."
+              name="XML Source"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.XmlSourceAdapter</property>
+                <property
+                  dataType="System.String"
+                  description="The XML data used by the XML source adapter."
+                  expressionType="Notify"
+                  name="XMLData">C:\Users\Owner\Desktop\SSIS Notes\weservices task\AllCities.xml</property>
+                <property
+                  dataType="System.String"
+                  description="The variable used by the XML source adapter to specify XML data."
+                  name="XMLDataVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Defines how the XML source adapter gets XML data."
+                  name="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The XML schema definition used by the XML source adapter."
+                  expressionType="Notify"
+                  name="XMLSchemaDefinition">C:\Users\Owner\Desktop\SSIS Notes\weservices task\AllCities.xsd</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Identifies whether or not to use inline schema."
+                  name="UseInlineSchema">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Defines how XML integer types are mapped."
+                  name="XMLIntegerMapping"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.XmlSourceAdapter+XMLIntegerMappingConverter">0</property>
+              </properties>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\XML Source.Outputs[Table]"
+                  name="Table">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Identifies the rowset associated with the output."
+                      name="RowsetID">Table</property>
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Table].Columns[Country]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\XML Source.Outputs[Table].ExternalColumns[Country]"
+                      length="255"
+                      lineageId="Package\Data Flow Task\XML Source.Outputs[Table].Columns[Country]"
+                      name="Country"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Table].Columns[City]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\XML Source.Outputs[Table].ExternalColumns[City]"
+                      length="255"
+                      lineageId="Package\Data Flow Task\XML Source.Outputs[Table].Columns[City]"
+                      name="City"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Table].ExternalColumns[Country]"
+                      dataType="wstr"
+                      length="255"
+                      name="Country">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CLRType">System.String</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Table].ExternalColumns[City]"
+                      dataType="wstr"
+                      length="255"
+                      name="City">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CLRType">System.String</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\XML Source.Outputs[Table Error Output]"
+                  isErrorOut="true"
+                  name="Table Error Output">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Identifies the rowset associated with the output."
+                      name="RowsetID">Table</property>
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Table Error Output].Columns[Country]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\Data Flow Task\XML Source.Outputs[Table Error Output].ExternalColumns[Country]"
+                      lineageId="Package\Data Flow Task\XML Source.Outputs[Table Error Output].Columns[Country]"
+                      name="Country" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Table Error Output].Columns[City]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\Data Flow Task\XML Source.Outputs[Table Error Output].ExternalColumns[City]"
+                      lineageId="Package\Data Flow Task\XML Source.Outputs[Table Error Output].Columns[City]"
+                      name="City" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Table Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\XML Source.Outputs[Table Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Table Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\XML Source.Outputs[Table Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Table Error Output].ExternalColumns[Country]"
+                      dataType="nText"
+                      name="Country" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\XML Source.Outputs[Table Error Output].ExternalColumns[City]"
+                      dataType="nText"
+                      name="City" />
+                  </externalMetadataColumns>
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task.Paths[Table]"
+              endId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Table"
+              startId="Package\Data Flow Task\XML Source.Outputs[Table]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Web Service Task"
+      DTS:CreationName="Microsoft.WebServiceTask"
+      DTS:Description="Web Service Task"
+      DTS:DTSID="{2BA81EAE-0770-47D4-B5C2-C91631A49E96}"
+      DTS:ExecutableType="Microsoft.WebServiceTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Web Service Task"
+      DTS:TaskContact="Web Service Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <WSTask:WebServiceTaskData
+          WSTask:ConnectionName="{55512F5A-C696-4262-9CFD-B18D22AFC017}"
+          WSTask:Service="GlobalWeather"
+          WSTask:WSDLFile="C:\Users\Owner\Desktop\SSIS Notes\weservices task\AllCities.wsdl"
+          WSTask:OverwriteWSDLFile="True"
+          WSTask:OutputLocation="AllCities.xml" xmlns:WSTask="www.microsoft.com/sqlserver/dts/tasks/webservicetask">
+          <WSTask:MethodInfo
+            WSTask:MethodName="GetCitiesByCountry"
+            WSTask:MessageName="">
+            <WSTask:Documentation>Get all major cities by country name(full / part).</WSTask:Documentation>
+            <WSTask:ParamInfo
+              WSTask:Name="CountryName"
+              WSTask:Datatype="string"
+              WSTask:ParamType="Variable"
+              WSTask:SeqNumber="0">
+              <WSTask:VariableValue>User::CountryName</WSTask:VariableValue>
+            </WSTask:ParamInfo>
+          </WSTask:MethodInfo>
+        </WSTask:WebServiceTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\XML Task"
+      DTS:CreationName="Microsoft.XMLTask"
+      DTS:Description="XML Task"
+      DTS:DTSID="{BD228E16-181A-48BF-BA1E-7EAECB35B507}"
+      DTS:ExecutableType="Microsoft.XMLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="XML Task"
+      DTS:TaskContact="XML Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData />
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{C76BA97A-517C-45CC-BA62-40992F4318C3}"
+      DTS:From="Package\Web Service Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\XML Task" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="162,42"
+          Id="Package\Web Service Task"
+          TopLeft="541,132" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Data Flow Task"
+          TopLeft="551,334" />
+        <NodeLayout
+          Size="124,42"
+          Id="Package\XML Task"
+          TopLeft="776,237" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="622,174">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="216,63"
+              Start="0,0"
+              End="216,55.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,27.5"
+                    Point2="0,31.5"
+                    Point3="4,31.5" />
+                  <mssgle:LineSegment
+                    End="212,31.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="212,31.5"
+                    Point2="216,31.5"
+                    Point3="216,35.5" />
+                  <mssgle:LineSegment
+                    End="216,55.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="134,42"
+          Id="Package\Data Flow Task\XML Source"
+          TopLeft="521,120" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Data Flow Task\OLE DB Destination"
+          TopLeft="518,244" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Table]"
+          TopLeft="588,162">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="15.5,82"
+              Start="0,0"
+              End="15.5,74.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,37"
+                    Point2="0,41"
+                    Point3="4,41" />
+                  <mssgle:LineSegment
+                    End="11.5,41" />
+                  <mssgle:CubicBezierSegment
+                    Point1="11.5,41"
+                    Point2="15.5,41"
+                    Point3="15.5,45" />
+                  <mssgle:LineSegment
+                    End="15.5,74.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
