@@ -1,0 +1,41 @@
+COL1,COL2
+,-1071607676,14,The data value cannot be converted for reasons other than sign mismatch or data overflow.
+
+1,CAPS
+,-1071607676,14,The data value cannot be converted for reasons other than sign mismatch or data overflow.
+
+2,CHAINS
+,-1071607676,14,The data value cannot be converted for reasons other than sign mismatch or data overflow.
+
+THREE,GLOVES
+,-1071607676,14,The data value cannot be converted for reasons other than sign mismatch or data overflow.
+
+FOUR,BALLS
+,-1071607676,14,The data value cannot be converted for reasons other than sign mismatch or data overflow.
+
+FIVE,PENS
+,-1071607676,14,The data value cannot be converted for reasons other than sign mismatch or data overflow.
+
+6,PENDANTS
+,-1071607676,14,The data value cannot be converted for reasons other than sign mismatch or data overflow.
+
+7,SHIRTS
+,-1071607676,14,The data value cannot be converted for reasons other than sign mismatch or data overflow.
+
+8,PENCILS
+,-1071607676,14,The data value cannot be converted for reasons other than sign mismatch or data overflow.
+
+NINE,WIRES
+,-1071607676,14,The data value cannot be converted for reasons other than sign mismatch or data overflow.
+
+10,PLUS
+,-1071607676,14,The data value cannot be converted for reasons other than sign mismatch or data overflow.
+
+11,BULBS
+,-1071607676,14,The data value cannot be converted for reasons other than sign mismatch or data overflow.
+
+12,PLUGS
+,-1071607676,14,The data value cannot be converted for reasons other than sign mismatch or data overflow.
+
+13,TUBES,-1071607676,14,The data value cannot be converted for reasons other than sign mismatch or data overflow.
+
