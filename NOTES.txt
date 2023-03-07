@@ -1,13 +1,13 @@
-XML DATA & CONNECTIONS
-
-SSIS LOGGING
-		TEXT
-		SQL SERVER TABLES
-
-OLE-DB CONNECTIONS
-
-SSIS DATA PROFILE VIEWER WITH XML OUTPUT FILES
-
----
-
-pls find the tasks @ http://sqlschool.com/TRNGTASKS/SSIS/
+ As a Software Engineer, the beneficiary will perform the following duties:
+ 
+• Interact with the business analysts and users to gather business requirements, system specifications and enhancements associated with software and database reporting systems.
+• Modify existing reports referencing database objects like tables, procedures, functions, triggers and view using T-SQL and schedule periodic deployments using T-SQL utilities.
+• Develop scalable software architecture, utilizing API frameworks and design patterns.
+• Develop software programs to read and update data residing in database systems on premises and cloud environment.
+• Enhance existing software applications as per changed requirements to increase performance tuning, develop scripts to monitor software performance.
+• Setup full CI/CD pipelines to automate the deployments and software testing processes for better quality control and quicker software delivery.
+• Write complex stored procedures and triggers to capture updated and deleted data from OLTP for reporting purposes.
+• Maintain index statistics and optimize queries by using execution plan for tuning associated reporting databases.
+• Perform software testing to ensure developed software is performing as desired and maintain software configurations for existing applications.
+• Develop Data Integration processes using scripts /views and SQl jobs to integrate the existing data from software applications into the enterprise data warehouse to allow for centralized access.
+• Develop Reporting Solutions using Reporting tools like Power BI/SSRS and incorporate them in central Reporting systems to perform analytics and analyses on software applications and business processes.
