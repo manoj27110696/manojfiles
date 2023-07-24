@@ -7,3 +7,5 @@ FIVE,PENS
 ,-1071607676,27
 NINE,WIRES
 ,-1071607676,27
+
+https://teams.microsoft.com/l/meetup-join/19%3ameeting_ZGYwYjVkY2MtYjUyOC00M2I1LTg3NGYtN2RiYTllZjc2ZTMy%40thread.v2/0?context=%7b%22Tid%22%3a%2250f8fcc4-94d8-4f07-84eb-36ed57c7c8a2%22%2c%22Oid%22%3a%22f5b416e1-5f25-4c42-9fcb-946d6d4e419b%22%7d
